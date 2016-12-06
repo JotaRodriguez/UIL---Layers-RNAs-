@@ -1,0 +1,58 @@
+const{
+	threads={{hilos}}
+	batch={{batch}}
+	log="{{nombre_log_red}}.log"
+}
+
+
+data {
+	{{datos_train}} [filename="../corpus/lab1/training", {{tipo_datos}}]	
+	{{datos_test}} [filename="../corpus/lab1/test", {{tipo_datos}}]
+}
+
+network {{nombre_red}} {
+	data tr {{datos_train}}
+	data ts {{datos_test}}
+
+	FI in
+
+	F f1 [numnodes={{numnodes}}]
+	FO out [{{capa_salida}}]
+	in->f1
+	f1->out
+}
+
+script {
+	//Normaliza los datos en cero y uno (0,1)	
+	{{datos_train}}.div(255)
+	{{datos_test}}.div(255)
+	
+	//porcentaje del factor de aprendizaje
+	{{nombre_red}}.mu = {{mu}}	
+
+	//implementación de ruido
+	{{nombre_red}}.noiser = {{noiser}}
+	{{nombre_red}}.noisesd = {{noisesd}}
+
+	 {{nombre_red}}.drop={{drop}}
+
+	//normalizacion
+	//{{nombre_red}}.bn = {{bn}}
+
+
+	{{nombre_red}}.train({{numero_training}})
+
+	//{{nombre_red}}.save("{{nombre_log_red}}.saved")
+
+	//porcentaje del factor de aprendizaje
+	//{{nombre_red}}.mu = 0.01	
+	//{{nombre_red}}.train(20)
+	
+	//porcentaje del factor de aprendizaje
+	//{{nombre_red}}.mu = 0.001	
+	//{{nombre_red}}.train(20)
+
+	
+
+
+}
