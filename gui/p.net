@@ -6,8 +6,8 @@ const{
 
 
 data {
-	{{datos_train}} [filename="../corpus/lab1/training", {{tipo_datos}}]	
-	{{datos_test}} [filename="../corpus/lab1/test", {{tipo_datos}}]
+	{{datos_train}} [filename="training", {{tipo_datos}}]	
+	{{datos_test}} [filename="red/test", {{tipo_datos}}]
 }
 
 network {{nombre_red}} {

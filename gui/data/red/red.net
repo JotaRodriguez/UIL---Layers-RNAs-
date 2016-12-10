@@ -1,0 +1,59 @@
+ 		const{
+	threads=4
+	batch=100
+	log="mi_red.log"
+}
+
+
+data {
+	D1 [filename="training", binary]	
+	D2 [filename="red/test", binary]
+}
+
+network mired {
+	data tr D1
+	data ts D2
+
+	FI in
+
+	F f1 [numnodes=0.1]
+	FO out [classification]
+	in-&gt;f1
+	f1-&gt;out
+}
+
+script {
+	//Normaliza los datos en cero y uno (0,1)	
+	D1.div(255)
+	D2.div(255)
+	
+	//porcentaje del factor de aprendizaje
+	mired.mu = 0.01	
+
+	//implementación de ruido
+	mired.noiser = 0.5
+	mired.noisesd = 0.1
+
+	 mired.drop=0.21
+
+	//normalizacion
+	//mired.bn = 1.0
+
+
+	mired.train(1000)
+
+	//mired.save("mi_red.saved")
+
+	//porcentaje del factor de aprendizaje
+	//mired.mu = 0.01	
+	//mired.train(20)
+	
+	//porcentaje del factor de aprendizaje
+	//mired.mu = 0.001	
+	//mired.train(20)
+
+	
+
+
+} 	
+ 

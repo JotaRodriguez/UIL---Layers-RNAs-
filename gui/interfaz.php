@@ -80,7 +80,7 @@
 
 <hr>
 <div class="row">
-	<button type="submit" class="btn btn-success pull-left" > 
+	<button type="button" class="btn btn-success pull-left" id="lanzar"> 
 		<span class="glyphicon glyphicon-triangle-right"></span> 
 		Lanzar Red
 	</button>

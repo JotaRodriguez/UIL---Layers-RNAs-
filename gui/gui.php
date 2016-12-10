@@ -23,9 +23,7 @@
 	
  ?>
 
- <pre   style="width: 515px; height: 700px;    overflow: scroll;"">
- 	<code >
+ <pre   style="width: 515px; height: 806px;    overflow: scroll;" id="codigored" name="codigored">
  		<?php echo $contenido; ?>
- 	</code>
  	
  </pre>

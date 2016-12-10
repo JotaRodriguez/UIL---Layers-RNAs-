@@ -23,7 +23,7 @@
     	</a>
     </li>
     <li role="presentation">
-    	<a href="#settings" aria-controls="archivos" role="tab" data-toggle="tab"> 
+    	<a href="#archivos" aria-controls="archivos" role="tab" data-toggle="tab"> 
     		<span class="glyphicon glyphicon-console"></span> Archivos
     	</a>
     </li>
@@ -31,10 +31,15 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">Gráfico 1</div>
+<div id="container" style="height: 350px; min-width: 650px"></div>
+    <div role="tabpanel" class="tab-pane active" id="home"></div>
     <div role="tabpanel" class="tab-pane" id="profile">Gráfico 2</div>
     <div role="tabpanel" class="tab-pane" id="messages">Configuración</div>
-    <div role="tabpanel" class="tab-pane" id="settings">Log</div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+    <textarea id="logProceso" style="width: 649px; height: 231px;    overflow: scroll; border: 0; background: #000; color: #fff;"></textarea>
+
+
+    </div>
     <div role="tabpanel" class="tab-pane" id="archivos">lista</div>
   </div>
 
