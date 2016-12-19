@@ -31,7 +31,15 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-<div id="container" style="height: 350px; min-width: 650px"></div>
+
+<div id="myDiv"></div>
+
+  <!-- <div id="chart_div"></div> -->
+  <!-- <div id="container" style="height: 350px; min-width: 650px"></div> -->
+  <!-- <div id="chartContainer" style="height: 400px; width: 100%;">
+  </div>
+ -->
+
     <div role="tabpanel" class="tab-pane active" id="home"></div>
     <div role="tabpanel" class="tab-pane" id="profile">Gráfico 2</div>
     <div role="tabpanel" class="tab-pane" id="messages">Configuración</div>

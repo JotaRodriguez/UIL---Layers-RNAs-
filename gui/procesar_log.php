@@ -1,13 +1,13 @@
 <?php 
 
-	$contenido = file_get_contents("data/mnist_red.log");
+	$contenido = file_get_contents("data/red/mi_red.log");
 
 	
 	
 	$contenido =  str_ireplace("Start","",$contenido);
 	$contenido =  str_ireplace("tart","",$contenido);
 
-	$file = fopen("data/mnist_red.log", "r") or exit("Unable to open file!");
+	$file = fopen("data/red/mi_red.log", "r") or exit("Unable to open file!");
 	//Output a line of the file until the end is reached
 	$g = 0;
 	
@@ -63,8 +63,10 @@
 
 	$g++;
 
-
-	//echo @$newValues[0];	
+	if (@$newValues[0] != "") {
+		echo @$newValues[0].",";		
+	}
+	
 	
 	
 
@@ -87,9 +89,9 @@
 
 	
 	}
+
 	fclose($file);
 
-	//echo @$newValues[0];	
 
 
 // echo "------" . $g."---";
