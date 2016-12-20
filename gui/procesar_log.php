@@ -1,4 +1,7 @@
 <?php 
+	
+	//echo "<tr>";
+
 
 	$contenido = file_get_contents("data/red/mi_red.log");
 
@@ -10,7 +13,7 @@
 	$file = fopen("data/red/mi_red.log", "r") or exit("Unable to open file!");
 	//Output a line of the file until the end is reached
 	$g = 0;
-	
+	$c=1;
 	while(!feof($file))
 	{
 
@@ -61,41 +64,26 @@
 	// 	echo "," . @$newValues[0];	
 	// }
 
+	if (@$newValues[0] !="") {
+	
 	$g++;
+	
+		
 
-	if (@$newValues[0] != "") {
-		echo @$newValues[0].",";		
+	if ($g > 2) {
+		$c+=1;
+		echo "</tr><tr><td>".$c."</td>";
+		$g=1;
+	}
+
+	echo " <td>" . @$newValues[0] . "</td>";
+
+
 	}
 	
-	
-	
-
-	//print_r($newValues);
-	
-	//echo "->" . $newValues[0] . "<br>";
-	//echo $array22[0]."<br>";
-	
-
-	// echo @$datos[1];
-	//echo '<pre>',print_r(@$datos,1),'</pre>';
-	
-
-
-
-	//_____________________________
-	
-
-	
-
-	
 	}
+	echo "</tr>";
 
 	fclose($file);
-
-
-
-// echo "------" . $g."---";
-
-		
 
  ?>

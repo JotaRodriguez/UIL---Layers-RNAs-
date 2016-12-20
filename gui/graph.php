@@ -32,7 +32,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
 
-<div id="myDiv"></div>
+
 
   <!-- <div id="chart_div"></div> -->
   <!-- <div id="container" style="height: 350px; min-width: 650px"></div> -->
