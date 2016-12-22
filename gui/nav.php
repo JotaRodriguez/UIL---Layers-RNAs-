@@ -17,6 +17,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyecto <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="javascript:;" data-toggle="modal" data-target="#myModal">Nuevo Proyecto</a></li>
             <li><a href="index.php?mod=newnet">Nueva Red</a></li>
             <li><a href="#">Cargar Red</a></li>
           </ul>
@@ -30,6 +31,7 @@
             <li><a href="index.php?mod=newnet">Log de Errores</a></li>
             <li><a href="index.php?mod=comportamiento">Comportamiento</a></li>
             <li><a href="index.php?mod=histogram">Histogramas</a></li>
+            <li><a href="index.php?mod=graphlog">Graficar Log</a></li>
           </ul>
         </li>
       </ul>

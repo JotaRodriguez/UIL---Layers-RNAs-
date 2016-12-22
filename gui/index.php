@@ -1,4 +1,4 @@
-
+<?php error_reporting(E_ALL ^ E_NOTICE); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +42,11 @@
 	</div>
 
 	</div>
+
+	<?php include_once("newprj.php"); ?>
+
+	
+
 		<!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> -->
 
 
@@ -69,6 +74,10 @@
 
 	var datos;
 
+	<?php 
+
+		if ($_GET['mod']=='comportamiento') {
+	?>
 	setInterval(function(){ 
 		$.ajax({
 			url: 'procesar_log.php',
@@ -108,6 +117,12 @@
 
 	
 	$("#datared").html(datos);
+	<?php
+			# code...
+		}
+
+
+	 ?>
 
 
 	$.ajax({
@@ -128,7 +143,18 @@
 	
 
 
-	
+	function crear(){
+		var nameProject;
+		nameProject = $("#nameprj").val();
+		alert("Se ha creado el Proyecto, se redireccionara automaticamente para que cargue los datos y configure su red de layer");
+		var url = "http://localhost/gui/index.php?mod=newnet&project="+nameProject;
+		window.top.location.href = url;
+	}
+
+
+	$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').focus()
+	})
 	
 	</script>
 
