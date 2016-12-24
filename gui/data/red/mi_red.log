@@ -1,0 +1,7 @@
+Start
+training Errors (mired:out) 27278 of 60000  45.46%  CrossEnt=-0.201780
+test Errors (mired:out) 1635 of 10000  16.35%  CrossEnt=-0.093880
+training Errors (mired:out) 17152 of 60000  28.59%  CrossEnt=-0.134652
+test Errors (mired:out) 1217 of 10000  12.17%  CrossEnt=-0.074465
+training Errors (mired:out) 14526 of 60000  24.21%  CrossEnt=-0.117579
+test Errors (mired:out) 1033 of 10000  10.33%  CrossEnt=-0.063842

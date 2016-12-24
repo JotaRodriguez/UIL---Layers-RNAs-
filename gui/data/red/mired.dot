@@ -1,0 +1,10 @@
+digraph mired {
+rankdir=TB;
+Data [label="D1",style=filled,fontsize=12,fillcolor=LightBlue,shape=box]
+in [label="mired:in [784]",style=filled,fontsize=12,fillcolor=Gray,shape=box]
+f1 [label="mired:f1 [24]",style=filled,fontsize=12, fillcolor=White,shape=box]
+out [label="mired:out [10]",style=filled,fontsize=12, fillcolor=LightSalmon,shape=box]
+Data->in
+in->f1
+f1->out
+}
