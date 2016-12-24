@@ -8,3 +8,6 @@ This is an interface to modify the values of neural networks elaborated in the t
 <br >
 <b>Digrama of a neural network in layers</b>
 <img src="images/diagraman.png" >
+<br >
+<b>CLL: Console Layers Logs</b>
+<img src="images/cll.png" >
