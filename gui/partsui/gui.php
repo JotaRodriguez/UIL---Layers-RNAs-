@@ -24,7 +24,7 @@
 	
  ?>
 
- <pre  contenteditable="true" style="width: 515px; height: 806px;    overflow: scroll;" id="codigored" name="codigored">
+ <pre  contenteditable="true" style="width: 515px; height: 640px;    overflow: scroll;" id="codigored" name="codigored">
  		<?php echo $contenido; ?>
  	
  </pre>

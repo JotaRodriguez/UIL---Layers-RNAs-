@@ -20,73 +20,21 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/prism.css">
 	<link rel="stylesheet" href="js/build/xcharts.min.css">
-
-
-	<style>
-		.update-nag{
-		  display: inline-block;
-		  font-size: 14px;
-		  text-align: left;
-		  background-color: #fff;
-		  height: 40px;
-		  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
-		  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-		  margin-bottom: 10px;
-		}
-
-		.update-nag:hover{
-		    cursor: pointer;
-		    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.4);
-		  box-shadow: 0 1px 1px 0 rgba(0,0,0,.3);
-		}
-
-		.update-nag > .update-split{
-		  background: #337ab7;
-		  width: 33px;
-		  float: left;
-		  color: #fff!important;
-		  height: 100%;
-		  text-align: center;
-		}
-
-		.update-nag > .update-split > .glyphicon{
-		  position:relative;
-		  top: calc(50% - 9px)!important; /* 50% - 3/4 of icon height */
-		}
-		.update-nag > .update-split.update-success{
-		  background: #5cb85c!important;
-		}
-
-		.update-nag > .update-split.update-danger{
-		  background: #d9534f!important;
-		}
-
-		.update-nag > .update-split.update-info{
-		  background: #5bc0de!important;
-		}
-
-		.update-nag > .update-text{
-		  line-height: 19px;
-		  padding-top: 11px;
-		  padding-left: 45px;
-		  padding-right: 20px;
-		}
-
-	</style>
+	<link rel="stylesheet" href="css/style.css">
 	<title>GUI LAYERS</title>
 
 </head>
 <body>
-	<?php include_once("nav.php"); ?>
+	<?php include_once("partsui/nav.php"); ?>
 	<div style="height: 60px;"></div>
 	<div class="row">
 	<div class="col-lg-5" style="margin: 10px;">
-		<?php include_once("gui.php"); ?>
+		<?php include_once("partsui/gui.php"); ?>
 	</div>
 	<div class="col-lg-6 container" style="padding: 20px;">		
 		<?php 
 			if ($_GET['mod']=='newnet') {
-				include_once("interfaz.php");
+				include_once("partsui/interfaz.php");
 			}
 		 ?>
 		<div class="row">
@@ -96,9 +44,9 @@
 					?><div id="myDiv"></div><?php
 				}elseif ($_GET['mod']=='comportamiento') {
 			
-					include_once("comportamiento.php");
+					include_once("partsui/comportamiento.php");
 				}elseif($_GET['mod']=='logs'){
-					include_once("comportamiento.php");
+					include_once("partsui/log.php");
 				}
 
 			 	?>
@@ -107,13 +55,34 @@
 
 	</div>
 
-	<?php include_once("newprj.php"); ?>
+	<?php include_once("partsui/newprj.php"); ?>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/highcharts.js"></script>
 	<script src="js/jquery.highchartTable-min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/prism.js"></script>	
-	<?php include_once("app.js.php"); ?>
+	<?php include_once("partsui/app.js.php"); ?>
+
+	<script>
+	setInterval(function(){ $.ajax({
+			url: 'procesar_log_terminal.php',
+			type: 'POST',
+			dataType: 'text',
+			data: {param1: 'term'},
+		})
+		.always(function(data) {
+			$("#log-text").empty();
+			$("#log-text").append(data);
+
+			$('.log-text').sticky({
+				speed: 0 // The scroll animation speed
+			});
+					
+		}); }, 1000);
+
+
+
+	</script>
 
 
 </body>
