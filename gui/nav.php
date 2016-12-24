@@ -28,7 +28,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Datos <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="index.php?mod=newnet">Log de Errores</a></li>
+            <li><a href="index.php?mod=logs">Log de Errores</a></li>
             <li><a href="index.php?mod=comportamiento">Comportamiento</a></li>
             <li><a href="index.php?mod=histogram">Histogramas</a></li>
             <li><a href="index.php?mod=graphlog">Graficar Log</a></li>
@@ -37,9 +37,11 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-cog"></span>
+           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -48,6 +50,9 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <li><a href="#">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
+        </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

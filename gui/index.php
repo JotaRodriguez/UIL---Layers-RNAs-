@@ -1,4 +1,13 @@
-<?php error_reporting(E_ALL ^ E_NOTICE); ?>
+<?php 
+	// $cmd ="//anaconda/bin/python run.py" ;
+	//  $cmd ="/Users/JRodriguez/toolkits/rna/Layers/src/layers /Applications/XAMPP/xamppfiles/htdocs/gui/data/red/red.net " ;
+	// $result= shell_exec (  $cmd );
+	// echo $result;
+
+
+
+ 	error_reporting(E_ALL ^ E_NOTICE);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +20,59 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/prism.css">
 	<link rel="stylesheet" href="js/build/xcharts.min.css">
+
+
+	<style>
+		.update-nag{
+		  display: inline-block;
+		  font-size: 14px;
+		  text-align: left;
+		  background-color: #fff;
+		  height: 40px;
+		  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+		  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+		  margin-bottom: 10px;
+		}
+
+		.update-nag:hover{
+		    cursor: pointer;
+		    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.4);
+		  box-shadow: 0 1px 1px 0 rgba(0,0,0,.3);
+		}
+
+		.update-nag > .update-split{
+		  background: #337ab7;
+		  width: 33px;
+		  float: left;
+		  color: #fff!important;
+		  height: 100%;
+		  text-align: center;
+		}
+
+		.update-nag > .update-split > .glyphicon{
+		  position:relative;
+		  top: calc(50% - 9px)!important; /* 50% - 3/4 of icon height */
+		}
+		.update-nag > .update-split.update-success{
+		  background: #5cb85c!important;
+		}
+
+		.update-nag > .update-split.update-danger{
+		  background: #d9534f!important;
+		}
+
+		.update-nag > .update-split.update-info{
+		  background: #5bc0de!important;
+		}
+
+		.update-nag > .update-text{
+		  line-height: 19px;
+		  padding-top: 11px;
+		  padding-left: 45px;
+		  padding-right: 20px;
+		}
+
+	</style>
 	<title>GUI LAYERS</title>
 
 </head>
@@ -35,6 +97,8 @@
 				}elseif ($_GET['mod']=='comportamiento') {
 			
 					include_once("comportamiento.php");
+				}elseif($_GET['mod']=='logs'){
+					include_once("comportamiento.php");
 				}
 
 			 	?>
@@ -44,119 +108,12 @@
 	</div>
 
 	<?php include_once("newprj.php"); ?>
-
-	
-
-		<!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> -->
-
-
-		<script src="js/jquery.min.js"></script>
-
-		<script type="text/javascript" src="js/highcharts.js"></script>
-		<script src="js/jquery.highchartTable-min.js"></script>
-
-		<!-- <script type="text/javascript" src="js/exporting.js"></script>
-		<script type="text/javascript" src="js/comportamiento.js"></script>
-
-         		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-
-
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script src="js/jquery.highchartTable-min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script src="js/prism.js"></script>
-	
-
-
-	<script>
-
-	$(document).ready(function() {
-	$('table.highchart').highchartTable();
-	});
-
-	var datos;
-
-	<?php 
-
-		if ($_GET['mod']=='comportamiento') {
-	?>
-	setInterval(function(){ 
-		$.ajax({
-			url: 'procesar_log.php',
-			type: 'post',
-			dataType: 'html',
-			data: {param1: 'value1'},
-		}).fail(function() {
-		console.log("error");
-		})
-		.always(function(data) {
-			$("#datared").empty();
-			datos = data;
-			$("#datared").html(data);
-			
-			window.location.href=window.location.href
-		});
-
-	}, 5000)
-
-
-	// ;setInterval(function(){ 
-	// 	$.ajax({
-	// 		url: 'procesar_log.php',
-	// 		type: 'post',
-	// 		dataType: 'html',
-	// 		data: {param1: 'value1'},
-	// 	})
-	// 	.always(function(data) {
-	// 		$("#graff").html("");
-
-	// 		console.log(data);
-	// 		$("#graff").html(data);
-			
-	// 	});
-
-	// }, 4000);
-
-	
-	$("#datared").html(datos);
-	<?php
-			# code...
-		}
-
-
-	 ?>
-
-
-	$.ajax({
-		url: '/path/to/file',
-		type: 'default GET (Other values: POST)',
-		dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-		data: {param1: 'value1'},
-	})
-	.done(function() {
-		console.log("success");
-	})
-	.fail(function() {
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
-	});
-	
-
-
-	function crear(){
-		var nameProject;
-		nameProject = $("#nameprj").val();
-		alert("Se ha creado el Proyecto, se redireccionara automaticamente para que cargue los datos y configure su red de layer");
-		var url = "http://localhost/gui/index.php?mod=newnet&project="+nameProject;
-		window.top.location.href = url;
-	}
-
-
-	$('#myModal').on('shown.bs.modal', function () {
-	  $('#myInput').focus()
-	})
-	
-	</script>
+	<script src="js/prism.js"></script>	
+	<?php include_once("app.js.php"); ?>
 
 
 </body>
