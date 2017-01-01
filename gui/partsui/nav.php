@@ -29,12 +29,25 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Datos <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="index.php?mod=logs">Log de Errores</a></li>
-            <li><a href="index.php?mod=comportamiento">Comportamiento</a></li>
+            <li><a href="index.php?mod=comportamiento">Gráfico de Comportamiento</a></li>
             <li><a href="index.php?mod=histogram">Histogramas</a></li>
             <li><a href="index.php?mod=graphlog">Graficar Log</a></li>
+
           </ul>
         </li>
       </ul>
+
+
+        <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tool <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.php?mod=editor">Editor de Código</a></li>
+            <li><a href="index.php?mod=editor">Experimentos Parámetros</a></li>
+          </ul>
+        </li>
+      </ul>
+
 
       <ul class="nav navbar-nav navbar-right">
         

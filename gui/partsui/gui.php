@@ -23,8 +23,74 @@
 
 	
  ?>
-
+<!-- 
  <pre  contenteditable="true" style="width: 515px; height: 640px;    overflow: scroll;" id="codigored" name="codigored">
  		<?php echo $contenido; ?>
  	
- </pre>
+ </pre> -->
+
+ <!-- <pre><code class="nohighlight">.
+var a;
+ </code></pre> -->
+
+
+<div class="ui-group-buttons">
+    <a href="javascript:;" class="btn btn-success" role="button"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+    <div class="or"></div>
+    <a href="javascript:;" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+</div>
+
+<div class="ui-group-buttons">
+    <a href="javascript:;" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok"></span> Verificar y Correr</a>
+    <!-- <div class="or"></div>
+    <a href="javascript:;" class="btn btn-default" role="button"><span class="glyphicon glyphicon-remove"></span> Reset</a> -->
+</div>
+
+<br>
+<br>
+
+ <textarea id="myCode">
+ const{
+	threads=4
+	batch=100
+	log="mi_red.log"
+}
+
+
+data {
+	D1 [filename="training", binary]	
+	D2 [filename="test", binary]
+}
+
+network mired {
+	data tr D1
+	data ts D2
+
+	FI in
+
+	F f1 [numnodes=24]
+	FO out [classification]
+	in->f1
+	f1->out
+}
+
+script {
+	//Normaliza los datos en cero y uno (0,1)	
+	D1.div(255)
+	D2.div(255)
+	
+	//porcentaje del factor de aprendizaje
+	mired.mu = 0.01	
+
+	//implementación de ruido
+	mired.noiser = 1.0
+	mired.noisesd = 0.3
+
+	 mired.drop=0.21
+
+
+	mired.train(20)
+
+} 	
+ 
+ </textarea>
