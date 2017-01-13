@@ -1,13 +1,16 @@
 <?php 
 	
 	//echo "<tr>";
+	
+	$archivoLog = "data/red/mi_red.log";
+	// $archivoLog = "/Users/JRodriguez/toolkits/rna/cifar/cf2/cifar.log";
 
-	@$contenido = file_get_contents("data/red/mi_red.log");
+	@$contenido = file_get_contents($archivoLog);
 
 	$contenido =  str_ireplace("Start","",$contenido);
 	$contenido =  str_ireplace("tart","",$contenido);
 
-	@$file = fopen("data/red/mi_red.log", "r") or exit("<div class='alert alert-danger' role='alert'>
+	@$file = fopen($archivoLog, "r") or exit("<div class='alert alert-danger' role='alert'>
 		<div class='glyphicon glyphicon-remove-sign'></div> Unable to open file!</div>");
 	//Output a line of the file until the end is reached
 	$g = 0;

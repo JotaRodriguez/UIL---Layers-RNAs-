@@ -50,13 +50,11 @@ var a;
 <br>
 
  <textarea id="myCode">
- const{
+  const{
 	threads=4
 	batch=100
 	log="mi_red.log"
 }
-
-
 data {
 	D1 [filename="training", binary]	
 	D2 [filename="test", binary]
@@ -86,11 +84,9 @@ script {
 	mired.noiser = 1.0
 	mired.noisesd = 0.3
 
-	 mired.drop=0.21
-
-
+	mired.drop=0.21
 	mired.train(20)
-
 } 	
  
+
  </textarea>

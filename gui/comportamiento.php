@@ -19,14 +19,18 @@
     }
 } ?>
 
-<table class="highchart" data-graph-container-before="1"  style="display: none;" data-graph-type="line" data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+<!-- <table class="highchart" data-graph-container-before="1"  style="display: none;" data-graph-type="line" data-graph-datalabels-enabled="1" data-graph-datalabels-align="right">
+ -->
+<table class="highchart" data-graph-container-before="1" data-graph-type="line" style="display:none" data-graph-xaxis-end-on-tick="1">
   <caption>Evaluación Red Neuronal</caption>
   <thead>
     <tr>
 
-      <th>Iteracion</th>
-      <th>Error Train</th>
-      <th>Error Test</th>
+      <td>Iteracion</td>
+      <td>Error Entrenamiento</td>
+      
+      <td>Error Prueba</td>
+
     </tr>
   </thead>
   <tbody id="datared">

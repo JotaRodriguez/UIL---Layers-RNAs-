@@ -25,8 +25,10 @@
     <tr>
 
       <th>Iteracion</th>
-      <th>Error Train</th>
-      <th>Error Test</th>
+      <th>Error Entrenamiento</th>
+      
+      <th>Error  Prueba</th>
+
     </tr>
   </thead>
   <tbody id="datared">

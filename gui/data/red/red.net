@@ -37,7 +37,7 @@ script {
 	 mired.drop=0.21
 
 
-	mired.train(10)
+	mired.train(200)
 
 } 	
  
